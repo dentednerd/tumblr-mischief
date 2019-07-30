@@ -1,0 +1,690 @@
+<html>
+
+  <!-- Mischief Tumblr theme designed by Dented Nerd February 2014 -->
+  <!-- last updated July 2019 -->
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{Title}{block:PostTitle}- {PostTitle}{/block:PostTitle}</title>
+		
+		<meta name="color:Background" content="#eeeebb" />
+		<meta name="color:Header Background" content="#6fa188" />
+		<meta name="color:Footer Background" content="#b53d2d" />
+		<meta name="color:Post Background" content="#ffffcc" />
+		<meta name="color:Text" content="#482a32" />
+		<meta name="color:Links" content="#b53d2d" />
+		<meta name="color:Notes" content="#8f6a61" />
+		<meta name="color:Blockquotes" content="#7fb299" />
+		<meta name="color:Blockquote Border" content="#5e9077" />
+		<meta name="color:Text Title Background" content="#b53d2d" />
+		<meta name="color:Quote Title Background" content="#8f6a61" />
+		<meta name="color:Link Title Background" content="#482a32" />
+		<meta name="color:Question Title Background" content="#526767" />
+		<meta name="color:Audio Player Background" content="#baceb0" />
+		<meta name="color:Chat Box Background" content="#6fa188" />
+		<meta name="color:Chat Box Odd Lines" content="#b53d2d" />
+		<meta name="color:Chat Box Even Lines" content="#ffffcc" />
+
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
+		<link rel="icon" href="{Favicon}" />
+		<meta name="description" content="{MetaDescription}" />
+		<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Delius|Grand+Hotel' rel='stylesheet' type='text/css'>
+
+		<style type="text/css">
+      /* ----- RESETS ----- */
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      
+      img {
+        border: 0px;
+        max-width: 500px;
+      }
+      
+      @font-face {
+        font-family: Android;
+        src: url(http://fsymbols.org/css/android-emoji.ttf)
+      }
+
+      body {
+        background: #eeeebb;
+        font: normal 16px Delius, cursive;
+        letter-spacing:-1px;
+        color: #482a32;
+        line-height: 22px;
+        padding: 0;
+        margin: 0;
+      }
+      
+      /* ----- LAYOUT ----- */
+      #wrapper {
+        width: 500px;
+        margin: 0px auto;
+        padding: 0;
+      }
+      
+      #content {
+        clear: both;
+        width: 500px;
+        margin: 0;
+        padding: 140px 0 10px 0;
+        min-height: 750px;
+      }
+      
+      /* ----- TITLE ----- */
+      #title {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 140px;
+        background: #6fa188;
+        margin: 0;
+        padding: 0;
+        z-index: 2;
+        overflow: hidden;
+      }
+      
+      #description {
+        margin-top: 0px;
+        margin-bottom: 40px;
+      }
+      
+      #headwrap {
+        width: 100%;
+        font-size: 20px;
+        margin: 20px auto;
+        font: normal 20px Grand Hotel, cursive;
+        line-height: 18px;
+        color: #482a32;
+        letter-spacing: 0px;
+        text-align: center;
+      }
+      
+      h1 {
+        font: normal 50px Lobster Two, cursive;
+        line-height: 50px;
+        margin-bottom: 20px;
+        text-shadow: #fff 0px 2px 0, #354 0 -2px 0;
+        color: #ffc;
+        letter-spacing: 0px;
+      }
+      
+      /* ----- POSTS ----- */
+      div.open {
+        padding: 10px;
+        color: #ccc;
+        background-color: #ffffcc;
+        width: 420px;
+        margin: 0 30px;
+        height: 40px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        font:normal 20px Grand Hotel, cursive;
+        letter-spacing:0px;
+      }
+      
+      div.buttons {
+        height: 40px;
+        margin: 0px 0px 0px 10px;
+        padding: 0px;
+      }
+      
+      div.icon {
+        font-family: Android;
+        color: #ccc;
+        margin-top: 5px;
+        font-size: 50px;
+        line-height: 40px;
+      }
+      
+      div.open div.noteCount {
+        width: 360px;
+        padding: 20px;
+        margin-bottom: 0px;
+        height: 20px;
+        text-align: right;
+      }
+      
+      div.post {
+        width: 500px;
+        background: none;
+      }
+      
+      div.text,
+      div.link,
+      div.audio,
+      div.player,
+      div.chat,
+      div.quote,
+      div.question {
+        width: 460px;
+        padding: 20px;
+        height: auto;
+        text-align: center;
+        overflow: hidden;
+      }
+      
+      div.link {
+        background: #482a32;
+      }
+      
+      div.asker,
+      div.asker a {
+        font: normal 20px Grand Hotel, cursive;
+        letter-spacing: 0px;
+      }
+      
+      div.close {
+        width: 400px;
+        margin: 0px 30px 40px 30px;
+        padding: 20px;
+        background-color: #ffffcc;
+        color:#ccc;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: left;
+        align-items: center;
+        font: normal 18px Grand Hotel, cursive;
+        letter-spacing: 0px;
+      }
+      
+      div.open div.noteCount a {
+        color: #CCC;
+      }
+      
+      div.caption,
+      div.answer,
+      div.asker {
+        background: #ffffcc;
+        width:400px;
+        color: #482a32;
+        margin: 0px 30px;
+        padding: 20px;
+      }
+      
+      div.asker {
+        text-align: right;
+      }
+      
+      /* .caption {} */
+      
+      /* ----- TEXT STYLES ----- */
+      p {
+        margin-top: 14px;
+      }
+      
+      p:first-child {
+        margin-top: 0px;
+      }
+      
+      a {
+        text-decoration: none;
+        color: #b53d2d;
+      }
+      
+      div.back a {
+        color: #CCC;
+      }
+      
+      h2,
+      h2 a {
+        font: normal 30px Lobster Two, cursive;
+        color: #ffffcc;
+        line-height: 30px;
+        margin: 20px;
+        letter-spacing: -1px;
+        text-shadow: #fff 0px 1px 0, #000 0 -1px 0;
+      }
+      
+      blockquote {
+        background: #7fb299;
+        border-left: solid 10px #5e9077;
+        padding: 20px;
+        margin: 10px 0;
+        overflow:hidden;
+      }
+      
+      blockquote a {
+        text-decoration: none;
+      }
+      
+      blockquote img {
+        width: 95%;
+      }
+      
+      ul {
+        list-style: none inside;
+        margin: 25px;
+      }
+      
+      ul li {
+        line-height: 22px;
+      }
+      
+      ul li:before {
+        content: "\00BB \0020";
+        margin-right: 10px;
+      }
+      
+      ol {
+        list-style: decimal inside;
+        margin: 25px;
+      }
+      
+      ol li {
+        margin: 0px;
+        height: 22px;
+      }
+      
+      /* ----- TEXT ----- */
+      div.text {
+        background-color: #b53d2d;
+      }
+      
+      .text img {
+        width: 400px;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      
+      /* ----- PHOTO ----- */
+      img.bustImage {
+        margin-bottom: -10px;
+        min-width: 500px !important;
+        height: auto;
+      }
+      
+      div.html_photoset iframe {
+        margin-bottom: -10px;
+        background-color: #ffffcc !important;
+      }
+      
+      /* ----- QUOTES ----- */
+      div.quote {
+        background-color: #8f6a61;
+        width: 460px;
+        padding: 20px;
+      }
+      
+      /* .quote h2 {} */
+      
+      /* ----- LINK ----- */
+      div.link {
+        background-color: #482a32;
+      }
+      
+      /* ----- CHAT ----- */
+      div.chat {
+        background-color: #6fa188;
+      }
+      
+      div.chat ol {
+        padding: 20px;
+        margin: 0px;
+        text-align: justify;
+      }
+      
+      div.chat ol li {
+        display: block;
+        height: auto;
+        font: normal 16px Delius, cursive;
+      }
+      
+      div.chat ol li.even {
+        color: #ffffcc;
+      }
+      
+      div.chat ol li.odd {
+        color: #b53d2d;
+      }
+      
+      div.chat .name {
+        font-weight: bold;
+      }
+      
+      /* ----- AUDIO ----- */
+      div.audio {
+        width: 500px;
+        margin: 0px;
+        padding: 0px;
+      }
+      
+      div.audio img.albumArt {
+        min-width: 500px;
+        width: 500px;
+        margin-bottom: -5px;
+      }
+      
+      div.player {
+        background-color: #baceb0;
+        z-index:1;
+      }
+      
+      /* ----- VIDEO ----- */
+      .video {
+        margin: 0 0 -10px 0;
+        padding: 0 !important;
+      }
+      
+      /*ANSWER*/
+      div.question {
+        background-color: #526767;
+      }
+      
+      /* div.ask h2,
+      div.ask a {} */
+      
+      div.ask div.asker {
+        text-align: right;
+      }
+      
+      /* ----- NOTES ----- */
+      div.close ul.notes {
+        /* width: 400px; */
+        list-style-type: none;
+        display: inline;
+        margin: 0;
+        padding: 0;
+      }
+      
+      div.close ul.notes li {
+        display: inline;
+        margin: 0;
+        padding: 0 10px 0 0;
+      }
+      
+      div.close ul.notes li:before {
+        content: "";
+        margin: 0;
+        padding: 0;
+      }
+      
+      div.close ul.notes li a {
+        color: #ccc;
+      }
+      
+      div.notes {
+        clear: both;
+        width: 400px;
+        margin: 0px auto;
+      }
+      
+      div.notes ol.notes {
+        clear: both;
+        list-style-type: none;
+        width: 400px;
+        margin: 0 0 50px 0;
+        padding: 0;
+      }
+      
+      div.notes ol.notes li.note {
+        padding: 0px;
+        margin: 0px;
+        height: auto;
+      }
+      
+      /* div.notes ol.notes li.note span.action {} */
+      
+      div.notes ol.notes li.note .answer_content {
+        font-weight: normal;
+      }
+      
+      div.notes ol.notes li.note img.avatar {
+        vertical-align: -8px;
+        margin-right: 10px;
+      }
+      
+      div.notes ol.notes li.note blockquote {
+        margin: 0px 10px;
+        padding: 0px 10px;
+        line-height: 16px;
+      }
+      
+      div.notes ol.notes li.note blockquote p {
+        margin: 0px;
+      }
+      
+      /* div.notes ol.notes li.note blockquote a {} */
+      
+      /* ----- FOOTER ----- */
+      div#footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+        
+        background-color: #b53d2d;
+        font:normal 12px Delius, cursive;
+        letter-spacing:0px;
+        display:flex;
+        flex-flow:column nowrap;
+        justify-content:center;
+        align-items:center;
+      }
+      
+      #footwrap {
+        width: 500px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      /* ----- THEME CREDIT ----- */
+      div#theme {
+        text-align: center;
+      }
+      
+      div#theme a {
+        color: #ffc;
+      }
+      
+      /* ----- PAGINATION ----- */
+      div#pages {
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        font: normal 20px Lobster Two, cursive;
+        color: #ffc;
+        text-shadow: #fff 0px 1px 0, #000 0 -1px 0;
+      }
+      
+      div#pages a {
+        font: normal 20px Lobster Two, cursive;
+        color: #ffc;
+        text-shadow: #fff 0px 1px 0, #000 0 -1px 0;
+      }
+      
+      {CustomCSS}
+</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="content">
+			<!--TITLE-->
+			<div id="title">
+				<div id="headwrap">
+					<h1>{Title}</h1>
+					{Description}
+				</div>
+			</div>
+			<!--DESCRIPTION-->
+			
+			<!--OPEN POST-->
+			{block:Posts}
+			<div class="open">
+				<div class="icon">
+					{block:Text}&#9998;{/block:Text}
+					{block:Photo}&#x1f4f7;{/block:Photo}
+					{block:Photoset}&#x1f4f7;{/block:Photoset}
+					{block:Quote}&#10077;{/block:Quote}
+					{block:Link}&#x1f517;{/block:Link}
+					{block:Answer}?{/block:Answer}
+					{block:Chat}&#x1f4ac;{/block:Chat}
+					{block:Audio}&#9835;{/block:Audio}
+					{block:Video}&#x1f3a5;{/block:Video}
+				</div>
+				<div class="buttons">
+					{ReblogButton}{LikeButton}
+				</div>
+				<div class="noteCount">
+					{block:NoteCount}<a href="{permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+				</div>
+				
+			</div>
+			<div class="post">
+				
+				<!--TEXT-->
+				{block:Text}
+				{block:Title}<div class="text">
+					<h2><a href="{Permalink}">{Title}</a></h2>
+				</div>{/block:Title}
+				<div class="caption">{Body}</div>
+				{/block:Text}
+				
+				<!--PHOTO-->
+				{block:Photo}
+				{block:IndexPage}<a href="{Permalink}" class="imageLink">{/block:IndexPage}
+					{block:PermalinkPage}{LinkOpenTag}{/block:PermalinkPage}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"
+					class="bustImage" /></a>
+					{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+					{/block:Photo}
+					
+					{block:Photoset}
+					{Photoset-500}
+					{block:Caption}<div class="caption">{Caption}</div>
+					{/block:Caption}
+					{/block:Photoset}
+					
+					<!--QUOTE-->
+					{block:Quote}
+					<div class="quote">
+						<h2>&#10077;{Quote}&#10078;</h2>
+					</div>
+					{block:Source}<div class="caption">{Source}</div>{/block:Source}
+					{/block:Quote}
+					
+					<!--LINK HE COME TO TOWN COME TO SAVE THE PRINCESS ZELDA-->
+					{block:Link}
+					<div class="link">
+						<h2><a href="{URL}">{Name}</a></h2>
+					</div>
+					{block:Description}<div class="caption">{Description}</div>{/block:Description}
+					{/block:Link}
+					
+					<!--ANSWER-->
+					{block:Answer}
+					<div class="question">
+						<h2>{Question}</h2>
+					</div>
+					<div class="asker">-- a question from {Asker}</div>
+					<div class="answer">{Answer}</div>
+					{/block:Answer}
+					
+					<!--CHAT-->
+					{block:Chat}
+					<div class="chat">
+						<ol>
+							{block:Lines}
+							<li class="{Alt} user_{UserNumber}">{block:Label}<span class="name">{Label}</span>{/block:Label}
+								{Line}
+							</li>
+							{/block:Lines}
+						</ol>
+					</div>
+					{/block:Chat}
+					
+					<!--AUDIO-->
+					{block:Audio}
+					<div class="audio">
+						{block:AlbumArt}<img src="{AlbumArtURL}" class="albumArt">{/block:AlbumArt} </div>
+						<div class="player">
+							{block:AudioPlayer}{AudioPlayer}{/block:AudioPlayer}{block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}
+						</div>
+						
+						<div class="caption">
+							{block:TrackName}{TrackName}{/block:TrackName}
+							{block:Artist}by {Artist}<br />{/block:Artist}
+							{block:Album}from the album {Album}<br /><br />{/block:Album}
+							{block:Caption}{Caption}{/block:Caption}
+						</div>
+						{/block:Audio}
+						
+						<!--VIDEO-->
+						{block:Video}
+						<div class="video">{Video-500}</div>
+						{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+						{/block:Video}
+						
+						<div class="close">
+							<!--NOTES-->
+							<ul class="notes">
+								{block:ContentSource}<li class="peek">created by {SourceLink}</li>{/block:ContentSource}
+								{block:RebloggedFrom}<li class="peek">reblogged from <a
+									href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+									{block:HasTags}{block:Tags}<li class="peek"><a href="{TagURL}">{Tag}</a></li>
+									{/block:Tags}{/block:HasTags}
+								</ul>
+							</div>
+							<div class="notes">
+								{block:PermalinkPage}
+								{block:PostNotes}{PostNotes}{/block:PostNotes}
+								{/block:PermalinkPage}
+							</div>
+							
+							{/block:Posts}
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div id="footer">
+				<div id="footwrap">
+					<!--PAGINATION-->
+					{block:IndexPage}
+					<div id="pages">
+						{block:Pagination}
+						{block:PreviousPage}
+						&laquo;&nbsp;<a href="{PreviousPage}">newer</a>&nbsp;&nbsp;
+						{/block:PreviousPage}
+						
+						{block:NextPage}
+						&nbsp;&nbsp;<a href="{NextPage}">older</a>&nbsp;&raquo;
+						{/block:NextPage}
+						{/block:Pagination}
+					</div>
+					{/block:IndexPage}
+					
+					{block:PermalinkPage}
+					<div id="pages">
+						{block:PermalinkPagination}
+						{block:NextPost}
+						<a href="{NextPost}">&laquo;&nbsp;newer</a>&nbsp;&nbsp;
+						{/block:NextPost}
+						
+						{block:PreviousPost}
+						&nbsp;&nbsp;<a href="{PreviousPost}">older&nbsp;&raquo;</a>
+						{/block:PreviousPost}
+						{/block:PermalinkPagination}
+					</div>
+					{/block:PermalinkPage}
+					
+					<!--THEME CREDIT - PLEASE DON'T REMOVE-->
+					
+					<div id="theme">
+						<a href="">Mischief</a> theme by <a href="http://www.dentednerd.co.uk">Dented Nerd</a>
+					</div>
+				</div>
+			</div>
+		</body>
+		
+		</html>
